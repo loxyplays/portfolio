@@ -177,7 +177,7 @@ export function Contact() {
 
           <div className="relative">
             <p className="mx-auto max-w-lg text-balance text-[1.5rem] font-semibold leading-tight tracking-[-0.035em] text-gradient sm:text-[2rem]">
-              Got something in mind? Let&apos;s make it real.
+              {contact.closingLine}
             </p>
             <motion.a
               href={`mailto:${site.email}`}

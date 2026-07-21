@@ -19,8 +19,8 @@ const jetbrains = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} — ${site.role}`,
-    template: `%s — ${site.name}`,
+    default: site.siteName,
+    template: `%s — ${site.siteName}`,
   },
   description: site.description,
   applicationName: site.name,
@@ -42,8 +42,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_GB",
     url: site.url,
-    siteName: site.name,
-    title: `${site.name} — ${site.role}`,
+    siteName: site.siteName,
+    title: site.siteName,
     description: site.description,
     // Referenced explicitly as a real .png rather than via Next's
     // `opengraph-image.tsx` convention, which exports an extensionless file
@@ -61,9 +61,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} — ${site.role}`,
+    title: site.siteName,
     description: site.description,
-    creator: "@zacdelaney",
     images: ["/og.png"],
   },
   robots: {

@@ -7,7 +7,9 @@ export const dynamic = "force-static";
 
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: { userAgent: "*", allow: "/" },
+    // /admin is a static file like any other and can't be hidden, but it has
+    // no business in search results. It's inert without a valid token.
+    rules: { userAgent: "*", allow: "/", disallow: "/admin/" },
     sitemap: `${site.url}/sitemap.xml`,
   };
 }

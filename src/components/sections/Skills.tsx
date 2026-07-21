@@ -2,7 +2,12 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { skillCategories, type SkillCategory, type Skill } from "@/lib/data";
+import {
+  skillCategories,
+  marqueeItems,
+  type SkillCategory,
+  type Skill,
+} from "@/lib/data";
 import { SectionShell } from "@/components/ui/SectionShell";
 import { StaggerGroup, StaggerItem } from "@/components/ui/Reveal";
 import { scaleIn, EASE } from "@/lib/motion";
@@ -143,24 +148,6 @@ function CategoryCard({
 /* -------------------------------------------------------------------------- */
 /* Marquee                                                                     */
 /* -------------------------------------------------------------------------- */
-
-const marqueeItems = [
-  "TypeScript",
-  "React",
-  "Next.js",
-  "Tailwind CSS",
-  "Framer Motion",
-  "Node.js",
-  "PostgreSQL",
-  "Luau",
-  "Roblox Studio",
-  "Unity",
-  "Figma",
-  "WebGL",
-  "Redis",
-  "Docker",
-  "tRPC",
-];
 
 /**
  * Infinite ticker.

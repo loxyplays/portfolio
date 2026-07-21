@@ -72,12 +72,12 @@ export function Hero() {
             className="mt-7 text-[2.5rem] font-semibold leading-[1.02] tracking-[-0.045em] sm:text-[3.5rem] lg:text-[4.25rem]"
           >
             <AnimatedText
-              text="Building digital experiences that feel futuristic."
+              text={site.heroHeadline}
               wordClassName="text-gradient"
               play={play}
               delay={0.25}
               stagger={0.06}
-              dim={["that", "feel"]}
+              dim={site.heroDimWords}
             />
           </h1>
 
@@ -85,10 +85,7 @@ export function Hero() {
             {...rise(0.85)}
             className="mt-7 max-w-lg text-[0.9375rem] leading-relaxed text-muted sm:text-[1.0625rem]"
           >
-            I&apos;m {site.name.split(" ")[0]} — a developer and designer building
-            websites, games, and applications. I care about the details most
-            people only feel: how fast it loads, how it responds, how right it
-            feels in the hand.
+            I&apos;m {site.name.split(" ")[0]} — {site.heroIntro}
           </motion.p>
 
           <motion.div

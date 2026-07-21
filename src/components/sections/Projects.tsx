@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { projects, type Project } from "@/lib/data";
+import { projects, socials, type Project } from "@/lib/data";
 import { SectionShell } from "@/components/ui/SectionShell";
 import { StaggerGroup, StaggerItem, Reveal } from "@/components/ui/Reveal";
 import { TiltCard } from "@/components/ui/TiltCard";
@@ -249,7 +249,10 @@ export function Projects() {
       description="A mix of product work, open source and games. Every one of these went live and had real people use it."
       aside={
         <motion.a
-          href="https://github.com/zacdelaney"
+          href={
+            socials.find((s) => s.key === "github")?.href ??
+            "https://github.com"
+          }
           target="_blank"
           rel="noopener noreferrer"
           whileHover={{ x: 3 }}
