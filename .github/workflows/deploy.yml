@@ -47,7 +47,13 @@ jobs:
           test -f out/CNAME || { echo "::error::out/CNAME missing — custom domain would break"; exit 1; }
           echo "CNAME: $(cat out/CNAME)"
 
+      # `enablement` lets this switch the repo's Pages source from "deploy
+      # from a branch" to "GitHub Actions". Without it the run fails here,
+      # because there's no workflow-backed Pages site to publish into — and
+      # GitHub's built-in Jekyll build keeps serving the branch instead.
       - uses: actions/configure-pages@v5
+        with:
+          enablement: true
 
       - uses: actions/upload-pages-artifact@v3
         with:
