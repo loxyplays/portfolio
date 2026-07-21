@@ -8,14 +8,46 @@ Builds to **static files**. No Node runtime needed to host it.
 
 ## Deploying
 
+The site is hosted on GitHub Pages at **loxy.lol**, from the `L0XYY/port` repo.
+
+There are two paths, because GitHub Actions is currently unavailable on this
+account (see below).
+
+### Now: manual deploy to `gh-pages`
+
 ```bash
-npm install
-npm run build
+npm run deploy
 ```
 
-That writes an `out/` folder. **Upload the contents of `out/` to your host** — that's the whole deployment. Any file server works: Cloudflare Pages, Netlify, GitHub Pages, S3, nginx, cPanel.
+Builds, then force-pushes `out/` to the `gh-pages` branch. Requires Pages to be
+set to **Settings → Pages → Source → Deploy from a branch → `gh-pages` / `(root)`**.
 
-Upload the *contents*, not the folder itself — `out/index.html` must land at your web root.
+`scripts/deploy.mjs` refuses to publish if `index.html`, `CNAME` or `.nojekyll`
+are missing from the build, since each of those failing silently breaks
+something different (the site, the domain, and every stylesheet respectively).
+
+### Later: automatic deploy via Actions
+
+`.github/workflows/deploy.yml` builds and publishes on every push to `main`.
+It is committed and ready, but **every run so far has failed before starting**
+with:
+
+> The job was not started because your account is locked due to a billing issue.
+
+That's an account-level lock, unrelated to this repo or the workflow — it
+affects free accounts that have never purchased anything, usually as leftover
+state from an expired trial or a failed card authorisation. GitHub Support can
+clear it. Until then the workflow is untested.
+
+Once Actions works, switch **Settings → Pages → Source** to **GitHub Actions**
+and pushes to `main` deploy on their own. `npm run deploy` still works as a
+manual fallback.
+
+### Other hosts
+
+`npm run build` writes a plain `out/` folder that any file server can host —
+Cloudflare Pages, Netlify, S3, nginx. Upload the *contents*, so
+`out/index.html` lands at the web root.
 
 ### Before the first deploy
 
