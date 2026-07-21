@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /
+
+Sitemap: https://loxy.lol/sitemap.xml

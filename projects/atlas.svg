@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750" fill="none" role="img" aria-label="Atlas Engine — 2D lighting engine cover art">
+  <defs>
+    <linearGradient id="at-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0c0c0f"/>
+      <stop offset="1" stop-color="#040404"/>
+    </linearGradient>
+    <radialGradient id="at-lamp" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="0.25" stop-color="#ffffff" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="at-cone" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.26"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="at-shadow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#000000" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0.1"/>
+    </linearGradient>
+    <linearGradient id="at-fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0.7"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="750" fill="url(#at-bg)"/>
+
+  <!-- Light cones cast from the source -->
+  <path d="M600 200 L180 620 L1020 620 Z" fill="url(#at-cone)"/>
+  <path d="M600 200 L330 620 L870 620 Z" fill="url(#at-cone)" opacity="0.7"/>
+
+  <!-- Soft shadows cast by the occluders -->
+  <path d="M436 404 L300 620 L392 620 L484 436 Z" fill="url(#at-shadow)"/>
+  <path d="M764 404 L900 620 L808 620 L716 436 Z" fill="url(#at-shadow)"/>
+  <path d="M600 466 L556 620 L644 620 Z" fill="url(#at-shadow)" opacity="0.8"/>
+
+  <!-- Occluder geometry -->
+  <g stroke="#ffffff" fill="#0a0a0d">
+    <rect x="404" y="372" width="64" height="64" rx="8" stroke-opacity="0.5"/>
+    <rect x="732" y="372" width="64" height="64" rx="8" stroke-opacity="0.5"/>
+    <circle cx="600" cy="440" r="30" stroke-opacity="0.45"/>
+  </g>
+
+  <!-- Lit edges facing the source -->
+  <g stroke="#ffffff" stroke-opacity="0.9" stroke-width="2.5" stroke-linecap="round">
+    <path d="M404 372 L468 372"/>
+    <path d="M732 372 L796 372"/>
+    <path d="M578 414 A30 30 0 0 1 622 414"/>
+  </g>
+
+  <!-- Light source -->
+  <circle cx="600" cy="200" r="130" fill="url(#at-lamp)"/>
+  <circle cx="600" cy="200" r="13" fill="#ffffff"/>
+  <circle cx="600" cy="200" r="30" stroke="#ffffff" stroke-opacity="0.4" fill="none"/>
+  <circle cx="600" cy="200" r="52" stroke="#ffffff" stroke-opacity="0.16" fill="none"/>
+
+  <!-- Ray guides -->
+  <g stroke="#ffffff" stroke-opacity="0.14" stroke-dasharray="5 9">
+    <path d="M600 200 L404 372"/>
+    <path d="M600 200 L796 372"/>
+    <path d="M600 200 L600 410"/>
+  </g>
+
+  <!-- Ground plane -->
+  <path d="M100 620 L1100 620" stroke="#ffffff" stroke-opacity="0.24" stroke-width="2"/>
+  <g stroke="#ffffff" stroke-opacity="0.08">
+    <path d="M180 660 L1020 660"/>
+    <path d="M260 700 L940 700"/>
+  </g>
+
+  <rect y="450" width="1200" height="300" fill="url(#at-fade)"/>
+</svg>

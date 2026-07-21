@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750" fill="none" role="img" aria-label="Voidrunner — parkour game cover art">
+  <defs>
+    <linearGradient id="vr-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d0d10"/>
+      <stop offset="1" stop-color="#050505"/>
+    </linearGradient>
+    <radialGradient id="vr-vanish" cx="0.62" cy="0.46" r="0.4">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.32"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="vr-trail" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.5"/>
+    </linearGradient>
+    <linearGradient id="vr-fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0.75"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="750" fill="url(#vr-bg)"/>
+
+  <!-- Perspective corridor converging on the vanishing point -->
+  <g stroke="#ffffff" stroke-opacity="0.13">
+    <path d="M744 345 L-100 -60"/>
+    <path d="M744 345 L-100 240"/>
+    <path d="M744 345 L-100 560"/>
+    <path d="M744 345 L-100 860"/>
+    <path d="M744 345 L1400 -40"/>
+    <path d="M744 345 L1400 260"/>
+    <path d="M744 345 L1400 620"/>
+    <path d="M744 345 L400 900"/>
+    <path d="M744 345 L980 900"/>
+  </g>
+
+  <!-- Depth bands -->
+  <g stroke="#ffffff" fill="none">
+    <rect x="620" y="288" width="248" height="116" stroke-opacity="0.22"/>
+    <rect x="500" y="230" width="488" height="230" stroke-opacity="0.14"/>
+    <rect x="330" y="150" width="828" height="390" stroke-opacity="0.08"/>
+  </g>
+
+  <ellipse cx="744" cy="345" rx="230" ry="180" fill="url(#vr-vanish)"/>
+
+  <!-- Speed trails -->
+  <g>
+    <rect x="180" y="298" width="330" height="4" rx="2" fill="url(#vr-trail)"/>
+    <rect x="120" y="392" width="420" height="3" rx="1.5" fill="url(#vr-trail)" opacity="0.7"/>
+    <rect x="260" y="456" width="250" height="2.5" rx="1.25" fill="url(#vr-trail)" opacity="0.5"/>
+    <rect x="300" y="212" width="200" height="2" rx="1" fill="url(#vr-trail)" opacity="0.4"/>
+  </g>
+
+  <!-- Runner silhouette, mid-vault -->
+  <g fill="#ffffff">
+    <circle cx="512" cy="286" r="15" fill-opacity="0.95"/>
+    <path d="M498 306 L528 300 L546 352 L528 358 L520 330 L500 342 Z" fill-opacity="0.9"/>
+    <path d="M528 358 L560 402 L546 412 L516 372 Z" fill-opacity="0.75"/>
+    <path d="M500 342 L486 396 L470 392 L482 336 Z" fill-opacity="0.75"/>
+    <path d="M540 312 L586 296 L590 310 L544 328 Z" fill-opacity="0.6"/>
+  </g>
+
+  <!-- Platform edges -->
+  <g fill="#ffffff">
+    <rect x="430" y="430" width="190" height="9" rx="4" fill-opacity="0.32"/>
+    <rect x="700" y="486" width="150" height="7" rx="3.5" fill-opacity="0.2"/>
+    <rect x="240" y="520" width="120" height="6" rx="3" fill-opacity="0.13"/>
+  </g>
+
+  <rect y="450" width="1200" height="300" fill="url(#vr-fade)"/>
+</svg>
