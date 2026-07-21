@@ -146,7 +146,11 @@ export function Preloader() {
       {!done && (
         <motion.div
           key="preloader"
-          className="fixed inset-0 z-[10000] flex items-center justify-center"
+          // `curtain-failsafe` is a pure-CSS timer that dismisses this even if
+          // JavaScript never runs — see globals.css. Without it, a failed or
+          // slow hydration leaves a full-screen black panel over the entire
+          // site with no way past it.
+          className="curtain-failsafe fixed inset-0 z-[10000] flex items-center justify-center"
           exit={{ pointerEvents: "none" }}
         >
           {/* Two panels that split vertically to uncover the page. */}

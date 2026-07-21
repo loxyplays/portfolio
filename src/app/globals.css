@@ -40,6 +40,35 @@
   --animate-drift: drift 24s ease-in-out infinite;
 }
 
+/* ==========================================================================
+   Preloader failsafe
+   --------------------------------------------------------------------------
+   The intro curtain is server-rendered, so two full-screen black panels exist
+   in the HTML before any JavaScript runs. That makes it a single point of
+   failure for the whole site: if JS is slow, blocked by an extension, or
+   errors during hydration, the visitor stares at a black rectangle with the
+   entire page behind it and no way through.
+
+   This dismisses the curtain on a pure-CSS timer, which needs no JS at all.
+   `step-end` holds it fully opaque for the whole duration then cuts, so during
+   a normal visit — where React unmounts the curtain at ~3.1s — this never
+   fires and is invisible. It only ever matters when something has gone wrong.
+   ========================================================================== */
+@keyframes curtain-failsafe {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
+.curtain-failsafe {
+  animation: curtain-failsafe 4.5s step-end forwards;
+}
+
 /* Declared at the top level so it's always emitted regardless of how the
    utility is referenced. */
 @keyframes drift {
