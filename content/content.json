@@ -7,10 +7,13 @@
     "tagline": "Developer & designer building fast, futuristic interfaces",
     "description": "I design and build websites, games, and applications — interfaces that feel fast, considered, and a little ahead of their time.",
     "heroHeadline": "Building digital experiences that feel futuristic.",
-    "heroDimWords": ["that", "feel"],
+    "heroDimWords": [
+      "that",
+      "feel"
+    ],
     "heroIntro": "a developer and designer building websites, games, and applications. I care about the details most people only feel: how fast it loads, how it responds, how right it feels in the hand.",
-    "email": "hello@loxy.lol",
-    "location": "Manchester, UK",
+    "email": "lx@loxy.lol",
+    "location": "Devon, UK",
     "available": true,
     "availabilityLabel": "Available for select work"
   },
@@ -50,10 +53,24 @@
     "nowPlaying": "Currently building a real-time design canvas"
   },
   "stats": [
-    { "value": 7, "suffix": "+", "label": "Years coding", "hint": "Since 2019" },
-    { "value": 42, "suffix": "", "label": "Projects built", "hint": "Shipped, not started" },
-    { "value": 25, "suffix": "+", "label": "Technologies", "hint": "Used in production" },
-    { "value": 3.2, "suffix": "M+", "label": "Users reached", "hint": "Across web & games" }
+    {
+      "value": 8,
+      "suffix": "+",
+      "label": "Years Building",
+      "hint": "Since 2018"
+    },
+    {
+      "value": 25,
+      "suffix": "+",
+      "label": "Technologies",
+      "hint": "Used in production"
+    },
+    {
+      "value": 3.2,
+      "suffix": "M+",
+      "label": "Users reached",
+      "hint": "Across web & games"
+    }
   ],
   "projects": [
     {
@@ -63,15 +80,31 @@
       "detail": "Nebula is an infinite canvas where a whole team can sketch at once. The hard part wasn't the rendering — it was making 40 simultaneous editors feel like one shared room. Built on CRDTs over WebRTC with a Postgres snapshot layer, it holds sub-60ms cursor latency across continents and survives going fully offline mid-session.",
       "year": "2026",
       "status": "Live",
-      "tech": ["Next.js", "TypeScript", "WebRTC", "Yjs", "Postgres", "Canvas API"],
+      "tech": [
+        "Next.js",
+        "TypeScript",
+        "WebRTC",
+        "Yjs",
+        "Postgres",
+        "Canvas API"
+      ],
       "cover": "/projects/nebula.svg",
       "demo": "https://example.com/nebula",
       "source": "https://github.com/loxyplays",
       "featured": true,
       "metrics": [
-        { "value": "58ms", "label": "Median cursor latency" },
-        { "value": "40", "label": "Concurrent editors" },
-        { "value": "99.98%", "label": "Uptime, 12 months" }
+        {
+          "value": "58ms",
+          "label": "Median cursor latency"
+        },
+        {
+          "value": "40",
+          "label": "Concurrent editors"
+        },
+        {
+          "value": "99.98%",
+          "label": "Uptime, 12 months"
+        }
       ]
     },
     {
@@ -80,7 +113,11 @@
       "summary": "A first-person parkour game with hand-tuned momentum physics and 2.4M plays.",
       "year": "2025",
       "status": "Live",
-      "tech": ["Roblox Studio", "Luau", "Rojo"],
+      "tech": [
+        "Roblox Studio",
+        "Luau",
+        "Rojo"
+      ],
       "cover": "/projects/voidrunner.svg",
       "demo": "https://www.roblox.com/games/",
       "source": "https://github.com/loxyplays",
@@ -93,7 +130,12 @@
       "summary": "A headless React component library — 48 accessible primitives, fully unstyled.",
       "year": "2025",
       "status": "Open source",
-      "tech": ["React", "TypeScript", "Radix", "Tailwind"],
+      "tech": [
+        "React",
+        "TypeScript",
+        "Radix",
+        "Tailwind"
+      ],
       "cover": "/projects/prism.svg",
       "demo": "https://example.com/prism",
       "source": "https://github.com/loxyplays",
@@ -106,7 +148,12 @@
       "summary": "Self-hosted uptime and log monitoring that ingests 12k events a second on one box.",
       "year": "2024",
       "status": "Live",
-      "tech": ["Node.js", "Fastify", "ClickHouse", "Docker"],
+      "tech": [
+        "Node.js",
+        "Fastify",
+        "ClickHouse",
+        "Docker"
+      ],
       "cover": "/projects/sentinel.svg",
       "demo": "https://example.com/sentinel",
       "source": "https://github.com/loxyplays",
@@ -119,7 +166,12 @@
       "summary": "An offline-first focus timer PWA that syncs the moment you're back on a network.",
       "year": "2024",
       "status": "Beta",
-      "tech": ["Next.js", "IndexedDB", "Workbox", "Zustand"],
+      "tech": [
+        "Next.js",
+        "IndexedDB",
+        "Workbox",
+        "Zustand"
+      ],
       "cover": "/projects/halcyon.svg",
       "demo": "https://example.com/halcyon",
       "source": "https://github.com/loxyplays",
@@ -132,7 +184,11 @@
       "summary": "A 2D lighting and soft-shadow engine for rapid Unity prototyping.",
       "year": "2023",
       "status": "In development",
-      "tech": ["C#", "Unity", "HLSL"],
+      "tech": [
+        "C#",
+        "Unity",
+        "HLSL"
+      ],
       "cover": "/projects/atlas.svg",
       "demo": "",
       "source": "https://github.com/loxyplays",
@@ -146,11 +202,31 @@
       "title": "Frontend",
       "blurb": "Where I spend most of my hours.",
       "skills": [
-        { "name": "React", "level": 95, "note": "8 yrs" },
-        { "name": "Next.js", "level": 93, "note": "App Router" },
-        { "name": "TypeScript", "level": 90, "note": "Strict mode" },
-        { "name": "Tailwind CSS", "level": 94, "note": "v4" },
-        { "name": "Framer Motion", "level": 88, "note": "" }
+        {
+          "name": "React",
+          "level": 95,
+          "note": "8 yrs"
+        },
+        {
+          "name": "Next.js",
+          "level": 93,
+          "note": "App Router"
+        },
+        {
+          "name": "TypeScript",
+          "level": 90,
+          "note": "Strict mode"
+        },
+        {
+          "name": "Tailwind CSS",
+          "level": 94,
+          "note": "v4"
+        },
+        {
+          "name": "Framer Motion",
+          "level": 88,
+          "note": ""
+        }
       ]
     },
     {
@@ -158,10 +234,26 @@
       "title": "Backend",
       "blurb": "Enough to ship the whole thing myself.",
       "skills": [
-        { "name": "Node.js", "level": 86, "note": "Fastify / Hono" },
-        { "name": "Databases", "level": 82, "note": "Postgres, Redis" },
-        { "name": "APIs", "level": 88, "note": "REST, tRPC, WS" },
-        { "name": "Infrastructure", "level": 74, "note": "Docker, CI" }
+        {
+          "name": "Node.js",
+          "level": 86,
+          "note": "Fastify / Hono"
+        },
+        {
+          "name": "Databases",
+          "level": 82,
+          "note": "Postgres, Redis"
+        },
+        {
+          "name": "APIs",
+          "level": 88,
+          "note": "REST, tRPC, WS"
+        },
+        {
+          "name": "Infrastructure",
+          "level": 74,
+          "note": "Docker, CI"
+        }
       ]
     },
     {
@@ -169,10 +261,26 @@
       "title": "Game development",
       "blurb": "Where I learned what 'feel' means.",
       "skills": [
-        { "name": "Roblox Studio", "level": 92, "note": "6 yrs" },
-        { "name": "Luau", "level": 90, "note": "" },
-        { "name": "Unity", "level": 71, "note": "2D / shaders" },
-        { "name": "Gameplay systems", "level": 84, "note": "" }
+        {
+          "name": "Roblox Studio",
+          "level": 92,
+          "note": "6 yrs"
+        },
+        {
+          "name": "Luau",
+          "level": 90,
+          "note": ""
+        },
+        {
+          "name": "Unity",
+          "level": 71,
+          "note": "2D / shaders"
+        },
+        {
+          "name": "Gameplay systems",
+          "level": 84,
+          "note": ""
+        }
       ]
     },
     {
@@ -180,10 +288,26 @@
       "title": "Design",
       "blurb": "I draw the thing before I build the thing.",
       "skills": [
-        { "name": "UI / UX", "level": 89, "note": "Product-led" },
-        { "name": "Figma", "level": 91, "note": "Design systems" },
-        { "name": "Motion design", "level": 85, "note": "" },
-        { "name": "Typography", "level": 80, "note": "" }
+        {
+          "name": "UI / UX",
+          "level": 89,
+          "note": "Product-led"
+        },
+        {
+          "name": "Figma",
+          "level": 91,
+          "note": "Design systems"
+        },
+        {
+          "name": "Motion design",
+          "level": 85,
+          "note": ""
+        },
+        {
+          "name": "Typography",
+          "level": 80,
+          "note": ""
+        }
       ]
     }
   ],
