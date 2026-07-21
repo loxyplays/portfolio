@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750" fill="none" role="img" aria-label="Prism UI — component library cover art">
+  <defs>
+    <linearGradient id="pr-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#101013"/>
+      <stop offset="1" stop-color="#050505"/>
+    </linearGradient>
+    <radialGradient id="pr-glow" cx="0.5" cy="0.4" r="0.6">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="pr-face-a" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.07"/>
+    </linearGradient>
+    <linearGradient id="pr-face-b" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.03"/>
+    </linearGradient>
+    <linearGradient id="pr-fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0.7"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="750" fill="url(#pr-bg)"/>
+  <ellipse cx="600" cy="330" rx="500" ry="360" fill="url(#pr-glow)"/>
+
+  <!-- Exploded stack of component "layers" in isometric projection -->
+  <g>
+    <!-- back layer -->
+    <path d="M600 168 L858 296 L600 424 L342 296 Z" fill="url(#pr-face-b)" stroke="#ffffff" stroke-opacity="0.14"/>
+    <!-- middle layer -->
+    <path d="M600 268 L858 396 L600 524 L342 396 Z" fill="url(#pr-face-b)" stroke="#ffffff" stroke-opacity="0.18"/>
+    <!-- front layer -->
+    <path d="M600 368 L858 496 L600 624 L342 496 Z" fill="url(#pr-face-a)" stroke="#ffffff" stroke-opacity="0.3"/>
+  </g>
+
+  <!-- Vertical alignment guides -->
+  <g stroke="#ffffff" stroke-opacity="0.18" stroke-dasharray="4 7">
+    <path d="M600 168 L600 624"/>
+    <path d="M858 296 L858 496"/>
+    <path d="M342 296 L342 496"/>
+  </g>
+
+  <!-- Primitive modules floating around the stack -->
+  <g stroke="#ffffff" fill="#0a0a0c">
+    <rect x="196" y="196" width="92" height="46" rx="12" stroke-opacity="0.35"/>
+    <rect x="212" y="212" width="46" height="6" rx="3" fill="#ffffff" fill-opacity="0.45" stroke="none"/>
+
+    <rect x="906" y="176" width="112" height="56" rx="14" stroke-opacity="0.28"/>
+    <circle cx="934" cy="204" r="9" fill="#ffffff" fill-opacity="0.5" stroke="none"/>
+    <rect x="952" y="200" width="48" height="6" rx="3" fill="#ffffff" fill-opacity="0.28" stroke="none"/>
+
+    <rect x="932" y="556" width="98" height="40" rx="20" stroke-opacity="0.3"/>
+    <circle cx="952" cy="576" r="11" fill="#ffffff" fill-opacity="0.75" stroke="none"/>
+
+    <rect x="168" y="536" width="120" height="52" rx="13" stroke-opacity="0.22"/>
+    <rect x="184" y="554" width="62" height="6" rx="3" fill="#ffffff" fill-opacity="0.32" stroke="none"/>
+    <rect x="184" y="568" width="40" height="5" rx="2.5" fill="#ffffff" fill-opacity="0.16" stroke="none"/>
+  </g>
+
+  <!-- Connector lines from modules into the stack -->
+  <g stroke="#ffffff" stroke-opacity="0.12">
+    <path d="M288 220 L400 290"/>
+    <path d="M906 208 L800 288"/>
+    <path d="M932 576 L790 512"/>
+    <path d="M288 562 L420 500"/>
+  </g>
+
+  <rect y="450" width="1200" height="300" fill="url(#pr-fade)"/>
+</svg>

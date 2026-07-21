@@ -1,0 +1,64 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  # Lets you re-deploy from the Actions tab without pushing a commit.
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Never let two deploys race. Queue rather than cancel, so an in-flight
+# publish is always allowed to finish cleanly.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      # `ci` not `install`: installs exactly the locked versions and fails
+      # loudly if package-lock.json is out of sync with package.json.
+      - run: npm ci
+
+      - run: npm run build
+
+      # Belt and braces. Deploying via Actions bypasses Jekyll entirely, but
+      # if this repo ever falls back to branch-based Pages, Jekyll would
+      # silently drop the whole _next/ directory — every script and
+      # stylesheet on the site — because the name starts with an underscore.
+      - run: touch out/.nojekyll
+
+      # Fail early with a clear message rather than shipping a site whose
+      # custom domain silently reverts to *.github.io.
+      - name: Verify CNAME survived the build
+        run: |
+          test -f out/CNAME || { echo "::error::out/CNAME missing — custom domain would break"; exit 1; }
+          echo "CNAME: $(cat out/CNAME)"
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

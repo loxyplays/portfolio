@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750" fill="none" role="img" aria-label="Nebula — collaborative canvas cover art">
+  <defs>
+    <linearGradient id="neb-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#101014"/>
+      <stop offset="1" stop-color="#050506"/>
+    </linearGradient>
+    <radialGradient id="neb-glow" cx="0.5" cy="0.45" r="0.55">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.22"/>
+      <stop offset="0.55" stop-color="#ffffff" stop-opacity="0.05"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="neb-grid" width="50" height="50" patternUnits="userSpaceOnUse">
+      <path d="M50 0H0V50" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1" fill="none"/>
+    </pattern>
+    <linearGradient id="neb-fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0.7"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="750" fill="url(#neb-bg)"/>
+  <rect width="1200" height="750" fill="url(#neb-grid)"/>
+  <ellipse cx="600" cy="340" rx="520" ry="380" fill="url(#neb-glow)"/>
+
+  <!-- Orbital rings: the shared canvas -->
+  <g stroke="#ffffff" fill="none">
+    <ellipse cx="600" cy="360" rx="330" ry="120" stroke-opacity="0.16"/>
+    <ellipse cx="600" cy="360" rx="240" ry="86" stroke-opacity="0.11"/>
+    <ellipse cx="600" cy="360" rx="420" ry="152" stroke-opacity="0.07"/>
+  </g>
+
+  <!-- Connection mesh between collaborators -->
+  <g stroke="#ffffff" stroke-opacity="0.2" stroke-width="1.2">
+    <path d="M395 300 L600 250 L820 330"/>
+    <path d="M395 300 L520 430 L820 330"/>
+    <path d="M600 250 L520 430"/>
+  </g>
+
+  <!-- Collaborator nodes -->
+  <g>
+    <circle cx="395" cy="300" r="7" fill="#ffffff" fill-opacity="0.95"/>
+    <circle cx="395" cy="300" r="16" stroke="#ffffff" stroke-opacity="0.28" fill="none"/>
+    <circle cx="600" cy="250" r="5" fill="#ffffff" fill-opacity="0.7"/>
+    <circle cx="820" cy="330" r="6" fill="#ffffff" fill-opacity="0.85"/>
+    <circle cx="820" cy="330" r="14" stroke="#ffffff" stroke-opacity="0.2" fill="none"/>
+    <circle cx="520" cy="430" r="4.5" fill="#ffffff" fill-opacity="0.55"/>
+  </g>
+
+  <!-- Multiplayer cursors -->
+  <g fill="#ffffff">
+    <path d="M446 344 L446 388 L457 378 L464 393 L472 389 L465 374 L479 373 Z" fill-opacity="0.95"/>
+    <rect x="482" y="378" width="62" height="20" rx="10" fill-opacity="0.14"/>
+    <path d="M742 262 L742 300 L751 291 L757 304 L764 300 L758 288 L770 287 Z" fill-opacity="0.6"/>
+    <rect x="773" y="290" width="52" height="18" rx="9" fill-opacity="0.09"/>
+  </g>
+
+  <!-- Selection frame -->
+  <g stroke="#ffffff" stroke-opacity="0.35" fill="none" stroke-dasharray="6 6">
+    <rect x="524" y="308" width="186" height="118" rx="8"/>
+  </g>
+  <g fill="#050506" stroke="#ffffff" stroke-opacity="0.6">
+    <rect x="519" y="303" width="10" height="10" rx="2"/>
+    <rect x="705" y="303" width="10" height="10" rx="2"/>
+    <rect x="519" y="421" width="10" height="10" rx="2"/>
+    <rect x="705" y="421" width="10" height="10" rx="2"/>
+  </g>
+
+  <rect y="450" width="1200" height="300" fill="url(#neb-fade)"/>
+</svg>
