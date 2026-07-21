@@ -11,13 +11,21 @@ export const EASE = {
   inOut: [0.83, 0, 0.17, 1] as [number, number, number, number],
 };
 
-/** Fade + rise + de-blur. The default entrance for almost everything. */
+/**
+ * Fade + rise. The default entrance for almost everything.
+ *
+ * Deliberately no `filter: blur()`. Animating blur is a bad trade here on
+ * three counts: it's a per-frame GPU blur on every revealing element; a
+ * lingering `filter` (even `blur(0px)`) forces its own composited layer and
+ * drops subpixel text antialiasing, so type renders soft; and if the
+ * animation is ever interrupted the element is left legibly blurred. Opacity
+ * and transform are compositor-only and fail safe.
+ */
 export const fadeUp: Variants = {
-  hidden: { opacity: 0, y: 24, filter: "blur(6px)" },
+  hidden: { opacity: 0, y: 24 },
   show: {
     opacity: 1,
     y: 0,
-    filter: "blur(0px)",
     transition: { duration: 0.75, ease: EASE.out },
   },
 };

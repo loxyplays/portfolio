@@ -27,11 +27,12 @@ export function Hero() {
   // Everything waits for the preloader curtain.
   const play = introComplete;
 
+  // No blur here either — see the note in lib/motion.ts. The hero is the
+  // first thing anyone sees, so a stalled filter is the worst place to
+  // discover one.
   const rise = (delay: number) => ({
-    initial: { opacity: 0, y: 22, filter: "blur(6px)" },
-    animate: play
-      ? { opacity: 1, y: 0, filter: "blur(0px)" }
-      : { opacity: 0, y: 22, filter: "blur(6px)" },
+    initial: { opacity: 0, y: 22 },
+    animate: play ? { opacity: 1, y: 0 } : { opacity: 0, y: 22 },
     transition: { duration: 0.85, ease: EASE.out, delay },
   });
 
