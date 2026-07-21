@@ -27,20 +27,8 @@
     {
       "key": "x",
       "label": "X",
-      "handle": "@loxy",
+      "handle": "@zxmewastaken",
       "href": "https://x.com/"
-    },
-    {
-      "key": "linkedin",
-      "label": "LinkedIn",
-      "handle": "in/loxy",
-      "href": "https://www.linkedin.com/"
-    },
-    {
-      "key": "dribbble",
-      "label": "Dribbble",
-      "handle": "@loxy",
-      "href": "https://dribbble.com/"
     }
   ],
   "about": {
