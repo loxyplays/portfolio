@@ -8,6 +8,7 @@ import { useActiveSection } from "@/hooks/useActiveSection";
 import { EASE } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 import { Menu, Close } from "@/components/ui/Icons";
+import { Logo } from "@/components/ui/Logo";
 import { MobileMenu } from "./MobileMenu";
 
 /**
@@ -57,9 +58,7 @@ export function Navbar() {
             onMouseLeave={() => setCursor("default")}
             className="group flex shrink-0 items-center gap-2.5 rounded-full py-1.5 pl-2.5 pr-3 sm:pr-4"
           >
-            <span className="relative flex h-6 w-6 items-center justify-center overflow-hidden rounded-lg bg-bright text-[0.625rem] font-bold tracking-tight text-void">
-              {site.initials}
-            </span>
+            <Logo className="h-[1.15rem] transition-transform duration-500 ease-out group-hover:scale-105" priority />
             <span className="hidden text-[0.8125rem] font-medium tracking-[-0.01em] text-bright sm:inline">
               {site.name}
             </span>

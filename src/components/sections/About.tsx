@@ -8,6 +8,7 @@ import { Reveal, StaggerGroup, StaggerItem } from "@/components/ui/Reveal";
 import { useCountUp } from "@/hooks/useCountUp";
 import { fadeUp, scaleIn } from "@/lib/motion";
 import { MapPin, Clock, Sparkle } from "@/components/ui/Icons";
+import { Logo } from "@/components/ui/Logo";
 
 /* -------------------------------------------------------------------------- */
 /* Stat card                                                                   */
@@ -68,15 +69,14 @@ export function About() {
             <div className="dot-bg pointer-events-none absolute inset-0 opacity-30" />
 
             <div className="relative">
-              {/* Monogram stands in for a photo — swap the block below for
-                  an <Image> when you have one you like. */}
-              <div className="relative mb-6 flex h-20 w-20 items-center justify-center overflow-hidden rounded-[22px] bg-gradient-to-br from-white via-white to-zinc-300 text-void">
-                <span className="text-2xl font-bold tracking-tight">
-                  {site.initials}
-                </span>
+              {/* Brand mark stands in for a photo — swap for an <Image> when
+                  you have one you like. Dark plate rather than the white one
+                  the monogram used: the mark is itself white. */}
+              <div className="relative mb-6 flex h-20 w-20 items-center justify-center overflow-hidden rounded-[22px] border border-white/10 bg-gradient-to-br from-white/[0.09] to-white/[0.02]">
+                <Logo className="h-8" />
                 <motion.span
                   aria-hidden="true"
-                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/60 to-transparent"
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent"
                   animate={{ x: ["-120%", "220%"] }}
                   transition={{
                     duration: 2.8,

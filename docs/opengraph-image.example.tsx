@@ -1,22 +1,28 @@
 import { ImageResponse } from "next/og";
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 import { site } from "@/lib/data";
 
-export const alt = `${site.name} — ${site.role}`;
+export const alt = site.siteName;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
-
-// Rendered once at build time into a real PNG. See the note in robots.ts —
-// `output: "export"` needs this stated explicitly.
 export const dynamic = "force-static";
 
 /**
- * Social card, rendered at build time.
+ * Social card, rendered once at build time.
  *
  * Satori (what powers ImageResponse) supports only a flexbox subset of CSS —
- * no grid, no shorthand `background` with multiple layers, and every element
- * with more than one child needs an explicit `display: flex`.
+ * no grid, no multi-layer background shorthand, and any element with more
+ * than one child needs an explicit `display: flex`.
+ *
+ * The logo is inlined as a data URI because Satori resolves `<img src>` at
+ * render time with no dev server to fetch from, and a relative path would
+ * simply come back empty.
  */
 export default function OpenGraphImage() {
+  const logo = readFileSync(join(process.cwd(), "public", "logo.png"));
+  const logoSrc = `data:image/png;base64,${logo.toString("base64")}`;
+
   return new ImageResponse(
     (
       <div
@@ -28,56 +34,39 @@ export default function OpenGraphImage() {
           justifyContent: "space-between",
           backgroundColor: "#050505",
           backgroundImage:
-            "radial-gradient(circle at 22% 18%, rgba(255,255,255,0.14), transparent 45%), radial-gradient(circle at 82% 88%, rgba(255,255,255,0.08), transparent 45%)",
+            "radial-gradient(circle at 20% 15%, rgba(167,139,250,0.16), transparent 45%), radial-gradient(circle at 85% 90%, rgba(255,255,255,0.07), transparent 45%)",
           padding: 72,
         }}
       >
-        {/* Wordmark */}
-        <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={logoSrc} width={72} height={56} alt="" />
           <div
             style={{
               display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              width: 52,
-              height: 52,
-              borderRadius: 14,
-              backgroundColor: "#fafafa",
-              color: "#050505",
-              fontSize: 22,
-              fontWeight: 700,
-            }}
-          >
-            {site.initials}
-          </div>
-          <div
-            style={{
-              display: "flex",
-              fontSize: 24,
+              fontSize: 26,
               color: "#a1a1aa",
               letterSpacing: "-0.01em",
             }}
           >
-            {site.name}
+            {site.siteName}
           </div>
         </div>
 
-        {/* Headline */}
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div
             style={{
               display: "flex",
-              fontSize: 76,
+              fontSize: 74,
               lineHeight: 1.05,
               letterSpacing: "-0.045em",
               color: "#fafafa",
               fontWeight: 600,
-              maxWidth: 940,
+              maxWidth: 950,
             }}
           >
-            Building digital experiences that feel futuristic.
+            {site.heroHeadline}
           </div>
-
           <div
             style={{
               display: "flex",
@@ -91,7 +80,6 @@ export default function OpenGraphImage() {
           </div>
         </div>
 
-        {/* Footer rule */}
         <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
           <div
             style={{
@@ -99,7 +87,7 @@ export default function OpenGraphImage() {
               width: 120,
               height: 3,
               borderRadius: 2,
-              backgroundColor: "#fafafa",
+              backgroundColor: "#a78bfa",
             }}
           />
           <div style={{ display: "flex", fontSize: 22, color: "#52525b" }}>

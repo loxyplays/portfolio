@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { navItems, site, socials } from "@/lib/data";
 import { socialIcons } from "@/components/ui/Icons";
+import { Logo } from "@/components/ui/Logo";
 import { useUIStore } from "@/store/useUIStore";
 
 export function Footer() {
@@ -35,9 +36,7 @@ export function Footer() {
               onMouseLeave={() => setCursor("default")}
               className="inline-flex items-center gap-2.5"
             >
-              <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-bright text-[0.6875rem] font-bold tracking-tight text-void">
-                {site.initials}
-              </span>
+              <Logo className="h-5" />
               <span className="text-[0.9375rem] font-medium tracking-[-0.02em] text-bright">
                 {site.name}
               </span>
