@@ -237,9 +237,39 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 /* Section                                                                     */
 /* -------------------------------------------------------------------------- */
 
+/**
+ * Shown when every project has been deleted. A section heading followed by
+ * nothing reads as a broken page, so say plainly that it's empty and point at
+ * where to fix it.
+ */
+function EmptyProjects() {
+  return (
+    <Reveal variants={scaleIn}>
+      <div className="glass flex flex-col items-center rounded-[28px] px-6 py-16 text-center">
+        <span className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] text-dim">
+          <Layers className="h-5 w-5" />
+        </span>
+        <p className="mt-5 text-[0.9375rem] font-medium text-bright">
+          No projects yet
+        </p>
+        <p className="mt-2 max-w-xs text-[0.8125rem] leading-relaxed text-muted">
+          Add your first one from the admin panel and it will appear here.
+        </p>
+      </div>
+    </Reveal>
+  );
+}
+
 export function Projects() {
+  // Content is editable at /admin, which means every list here can legitimately
+  // be empty. `projects[0]` on an empty array is `undefined`, and reading
+  // `.slug` off it used to throw during static prerendering — deleting every
+  // project didn't just empty the section, it failed the whole build and
+  // silently froze the live site on its last good deploy.
   const featured = projects.find((p) => p.featured) ?? projects[0];
-  const rest = projects.filter((p) => p.slug !== featured.slug);
+  const rest = featured
+    ? projects.filter((p) => p.slug !== featured.slug)
+    : [];
 
   return (
     <SectionShell
@@ -266,16 +296,22 @@ export function Projects() {
       }
     >
       <div className="space-y-4 sm:space-y-6">
-        <FeaturedProject project={featured} />
+        {featured ? (
+          <FeaturedProject project={featured} />
+        ) : (
+          <EmptyProjects />
+        )}
 
-        <StaggerGroup
-          gap={0.09}
-          className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3"
-        >
-          {rest.map((project, i) => (
-            <ProjectCard key={project.slug} project={project} index={i} />
-          ))}
-        </StaggerGroup>
+        {rest.length > 0 && (
+          <StaggerGroup
+            gap={0.09}
+            className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3"
+          >
+            {rest.map((project, i) => (
+              <ProjectCard key={project.slug} project={project} index={i} />
+            ))}
+          </StaggerGroup>
+        )}
       </div>
     </SectionShell>
   );
