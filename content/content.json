@@ -54,136 +54,13 @@
       "hint": "Used in production"
     },
     {
-      "value": 3.2,
-      "suffix": "M+",
+      "value": 100,
+      "suffix": "+",
       "label": "Users reached",
       "hint": "Across web & games"
     }
   ],
-  "projects": [
-    {
-      "slug": "nebula",
-      "name": "Nebula",
-      "summary": "A real-time collaborative design canvas with multiplayer cursors and conflict-free editing.",
-      "detail": "Nebula is an infinite canvas where a whole team can sketch at once. The hard part wasn't the rendering — it was making 40 simultaneous editors feel like one shared room. Built on CRDTs over WebRTC with a Postgres snapshot layer, it holds sub-60ms cursor latency across continents and survives going fully offline mid-session.",
-      "year": "2026",
-      "status": "Live",
-      "tech": [
-        "Next.js",
-        "TypeScript",
-        "WebRTC",
-        "Yjs",
-        "Postgres",
-        "Canvas API"
-      ],
-      "cover": "/projects/zine.png",
-      "demo": "",
-      "source": "https://github.com/loxyplays",
-      "featured": true,
-      "metrics": [
-        {
-          "value": "58ms",
-          "label": "Median cursor latency"
-        },
-        {
-          "value": "40",
-          "label": "Concurrent editors"
-        },
-        {
-          "value": "99.98%",
-          "label": "Uptime, 12 months"
-        }
-      ]
-    },
-    {
-      "slug": "voidrunner",
-      "name": "Voidrunner",
-      "summary": "A first-person parkour game with hand-tuned momentum physics and 2.4M plays.",
-      "year": "2025",
-      "status": "Live",
-      "tech": [
-        "Roblox Studio",
-        "Luau",
-        "Rojo"
-      ],
-      "cover": "/projects/voidrunner.svg",
-      "demo": "https://www.roblox.com/games/",
-      "source": "https://github.com/loxyplays",
-      "featured": false,
-      "metrics": []
-    },
-    {
-      "slug": "prism-ui",
-      "name": "Prism UI",
-      "summary": "A headless React component library — 48 accessible primitives, fully unstyled.",
-      "year": "2025",
-      "status": "Open source",
-      "tech": [
-        "React",
-        "TypeScript",
-        "Radix",
-        "Tailwind"
-      ],
-      "cover": "/projects/prism.svg",
-      "demo": "https://example.com/prism",
-      "source": "https://github.com/loxyplays",
-      "featured": false,
-      "metrics": []
-    },
-    {
-      "slug": "sentinel",
-      "name": "Sentinel",
-      "summary": "Self-hosted uptime and log monitoring that ingests 12k events a second on one box.",
-      "year": "2024",
-      "status": "Live",
-      "tech": [
-        "Node.js",
-        "Fastify",
-        "ClickHouse",
-        "Docker"
-      ],
-      "cover": "/projects/sentinel.svg",
-      "demo": "https://example.com/sentinel",
-      "source": "https://github.com/loxyplays",
-      "featured": false,
-      "metrics": []
-    },
-    {
-      "slug": "halcyon",
-      "name": "Halcyon",
-      "summary": "An offline-first focus timer PWA that syncs the moment you're back on a network.",
-      "year": "2024",
-      "status": "Beta",
-      "tech": [
-        "Next.js",
-        "IndexedDB",
-        "Workbox",
-        "Zustand"
-      ],
-      "cover": "/projects/halcyon.svg",
-      "demo": "https://example.com/halcyon",
-      "source": "https://github.com/loxyplays",
-      "featured": false,
-      "metrics": []
-    },
-    {
-      "slug": "atlas-engine",
-      "name": "Atlas Engine",
-      "summary": "A 2D lighting and soft-shadow engine for rapid Unity prototyping.",
-      "year": "2023",
-      "status": "In development",
-      "tech": [
-        "C#",
-        "Unity",
-        "HLSL"
-      ],
-      "cover": "/projects/atlas.svg",
-      "demo": "",
-      "source": "https://github.com/loxyplays",
-      "featured": false,
-      "metrics": []
-    }
-  ],
+  "projects": [],
   "skillCategories": [
     {
       "id": "frontend",
